@@ -1,0 +1,48 @@
+body, html {
+    margin: 10;
+    font-family: sans-serif;
+    background-color: lightblue;
+}
+
+#logo {
+    margin: 25px auto 10px;
+    height: 5vw;
+    width: 5vw;
+    background-image: url("http://cdn.cpcc.edu/latest/images/logos/bugs/bug-gold.png");
+    background-size: 5vw 5vw;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 0%
+}
+
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: left;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
+}
