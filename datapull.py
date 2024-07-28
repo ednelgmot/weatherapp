@@ -1,4 +1,8 @@
 import requests
+#from dotenv import load_dotenv
+import os
+from dataclasses import dataclass
+
 
 API_URL = 'https://api.weather.gov/gridpoints/GSP/126,77/forecast'
 ALERT_URL = 'https://api.weather.gov/alerts?point=35.487362,-80.621735'
@@ -6,11 +10,15 @@ ALERT_URL = 'https://api.weather.gov/alerts?point=35.487362,-80.621735'
 #####
 # evaluate your location
 #####
-def get_location():
-    ip_address = requests.get('http://api.ipify.org').text
-    geo_data = requests.get(f'http://ip-api.com/json/{ip_address}').json()
-    vlat = geo_data['lat']
-    vlon = geo_data['lon']
+#def get_location():
+#    ip_address = requests.get('http://api.ipify.org').text
+#    geo_data = requests.get(f'http://ip-api.com/json/{ip_address}').json()
+#    vlat = geo_data['lat']
+#    vlon = geo_data['lon']
+
+ #   return 
+
+
 
 
 #####

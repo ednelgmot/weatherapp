@@ -3,9 +3,24 @@
 {% extends 'base.html' %}
 
 {% block head %} 
-<h1> Weather Page </h1>
+  <div class="container">
+  <h2 class="mt-5">Alerts</h2>
+  </div>
 {% endblock %}
 
 {% block body %} 
-<p>alerts page</p>
+{% if data.error %}
+<p>Boom error</p>
+{% else %}
+<table class="table table-hover">
+
+{% for x in data['features'] %}
+<tr><td>Headline</td><td>{{ x['properties']['headline'] }}</td></tr>
+<tr><td>Urgency</td><td>{{ x['properties']['urgency'] }}</td></tr>
+<tr><td>Info</td><td>{{ x['properties']['description'] }}</td></tr>
+
+    {% endfor %}
+
+</table>
+{% endif %}
 {% endblock %}

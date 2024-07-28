@@ -3,7 +3,9 @@
 {% extends 'base.html' %}
 
 {% block head %} 
-<h2> Weather Page - Forcast </h2>
+<div class="container">
+<h2 class="mt-5">Forecast </h2>
+</div>
 {% endblock %}
 
 {% block body %} 
@@ -11,19 +13,19 @@
 {% if data.error %}
 <p>Boom error</p>
 {% else %}
-<table>
+<table class="table table-bordered">
 <tr>
     <th>Period</th>
     <th>Temp</th>
     <th>Forecast</th>
 </tr>
 <!-- table data -->
-    {% for x in data['properties']['periods'] %}
-    <tr>
-     <td>{{ x['name'] }}</td>
-     <td>{{ x['temperature'] }} {{ x['temperatureUnit'] }}</td>
-     <td>{{ x['shortForecast'] }}</td>
-    </tr>
+{% for x in data['properties']['periods'] %}
+
+<td>{{ x['name'] }}</td>
+<td>{{ x['temperature'] }} {{ x['temperatureUnit'] }}</td>
+<td>{{ x['shortForecast'] }}</td>
+</tr>
 
     {% endfor %}
 
