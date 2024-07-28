@@ -4,31 +4,26 @@
 
 {% block head %} 
 <div class="container">
-<h2 class="mt-5">Forecast </h2>
+<h2 class="mt-5">Input location for weather</h2>
 </div>
 {% endblock %}
 
 {% block body %} 
 
-{% if data.error %}
-<p>Boom error</p>
-{% else %}
-<table class="table table-bordered">
-<tr>
-    <th>Period</th>
-    <th>Temp</th>
-    <th>Forecast</th>
-</tr>
-<!-- table data -->
-{% for x in data['properties']['periods'] %}
+    <form action="{{ url_for('forecast')}}" method="POST">
+        <div class="col-md-4">
+            <label for="locinput" class="form-label">Location</label>
+            <select id="locinput" class="form-select">
+              <option selected>Choose...</option>
+              <option>Kannapolis</option>
+              <option>Concord</option>
+              <option>Charlotte</option>
+            </select>
+          </div>
+          <P>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Get weather</button>
+          </div>
+    </form>
 
-<td>{{ x['name'] }}</td>
-<td>{{ x['temperature'] }} {{ x['temperatureUnit'] }}</td>
-<td>{{ x['shortForecast'] }}</td>
-</tr>
-
-    {% endfor %}
-
-</table>
-{% endif %}
 {% endblock %}

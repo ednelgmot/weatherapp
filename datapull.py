@@ -5,6 +5,7 @@ from dataclasses import dataclass
 
 
 API_URL = 'https://api.weather.gov/gridpoints/GSP/126,77/forecast'
+
 ALERT_URL = 'https://api.weather.gov/alerts?point=35.487362,-80.621735'
 
 #####

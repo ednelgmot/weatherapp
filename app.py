@@ -16,9 +16,9 @@ app = Flask(__name__)
 
 
 @app.route('/')
+@app.route('/home')
 def index():
-    data = fetch_data()
-    return render_template('index.html', data=data)
+    return render_template('index.html')
 
 #####
 
@@ -27,5 +27,11 @@ def alerts():
     data = fetch_alerts()
     return render_template('alerts.html', data=data)
 
+@app.route('/forecast', methods=['POST'])
+def forecast():
+    data = fetch_data()
+    return render_template('forecast.html', data=data)
+
+#####
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
